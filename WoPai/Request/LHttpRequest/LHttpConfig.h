@@ -1,0 +1,47 @@
+//
+//  LHttpConfig.h
+//  KouDaiDuoBao
+//
+//  Created by 向琼 on 16/3/30.
+//  Copyright © 2016年 CitiesTechnology. All rights reserved.
+//
+
+#ifndef LHttpConfig_h
+#define LHttpConfig_h
+
+#define kErrorNoNetwork       @"网络无法连接"
+//#define kServerUrl            @"http://yydb.willfun.com.cn/module/yiyuangou/api/"
+//#define kHomeImgUrl           @"http://yydb.willfun.com.cn/"
+//#define kShaiDanImg           @"http://yydb.willfun.com.cn/module/yiyuangou/images/"
+//#define kUserHeadImg          @"http://yydb.willfun.com.cn/module/yiyuangou/images/"
+
+
+//测试环境
+//#define kServerUrl            @"http://testdb.willfun.com.cn/module/yiyuangou/api/"
+#define kHomeImgUrl           @"http://testdb.willfun.com.cn/"
+#define kShaiDanImg           @"http://testdb.willfun.com.cn/module/yiyuangou/images/"
+#define kUserHeadImg          @"http://testdb.willfun.com.cn/module/yiyuangou/images/"
+
+
+
+
+
+//#define kSuccessCode       1
+//#define kSuccessKey        @"status"
+//#define kMessageKey        @"message"
+//#define kDataKey           @"data"
+//#define kSumKey            @"sum"
+//#define kContentKey        @"article_list"
+
+
+//#define kServerUrl            @"http://220.113.194.44/ServletDemo"
+#define kServerUrl            @"http://www.fzyzkj.com:70/SMSWs.asmx"
+#define kSuccessCode       0
+#define kSuccessKey        @"Code"
+#define kMessageKey        @"Message"
+#define kDataKey           @"Data"
+#define kSumKey            @"sum"
+#define kContentKey        @"article_list"
+
+
+#endif /* LHttpConfig_h */
