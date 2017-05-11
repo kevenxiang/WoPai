@@ -9,13 +9,17 @@
 #import "ProductDetailViewController.h"
 #import "ASFSharedViewTransition.h"
 
-#define IMAGESCROVIEWHIGHT 260.0 //轮播图高度
+#define IMAGESCROVIEWHIGHT 300.0 //轮播图高度
 
 @interface ProductDetailViewController ()
 
 @end
 
 @implementation ProductDetailViewController
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = YES;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

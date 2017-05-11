@@ -7,7 +7,25 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ErrorModel.h"
+#import "UserModel.h"
+#import "Product.h"
+#import "NSObject+MJKeyValue.h"
 
 @interface Http : NSObject
+
++ (Http *)instance;
+
+#pragma mark - 用户登录
+- (void)userLoginWithPhone:(NSString *)phone pwd:(NSString *)pwd completion:(void(^)(ErrorModel *error, UserModel *user))completion;
+
+#pragma mark - 用户注册
+- (void)userRegisterWithPhone:(NSString *)phone pwd:(NSString *)pwd completion:(void(^)(ErrorModel *error, UserModel *user))completion;
+
+#pragma mark - 获取产品列表
+- (void)productListWithName:(NSString *)name page:(NSUInteger)page item:(NSUInteger)item completion:(void(^)(ErrorModel *error, NSArray *list))completion;
+
+#pragma mark - 添加产品
+- (void)productAddWithProduct:(Product *)product completion:(void(^)(ErrorModel *error))completion;
 
 @end

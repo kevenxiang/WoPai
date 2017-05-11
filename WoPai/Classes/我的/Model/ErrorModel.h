@@ -10,4 +10,7 @@
 
 @interface ErrorModel : NSObject
 
+@property (nonatomic, assign) NSInteger errCode;
+@property (nonatomic, copy) NSString *errMessage;
+
 @end

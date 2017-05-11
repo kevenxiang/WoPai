@@ -10,4 +10,6 @@
 
 @interface ItemsCell : UITableViewCell
 
+- (void)setDataWithImgs:(NSArray *)imgs titles:(NSArray *)titles;
+
 @end

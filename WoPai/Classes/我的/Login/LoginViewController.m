@@ -9,10 +9,10 @@
 #import "LoginViewController.h"
 #import "ReactiveCocoa.h"
 #import "ValidatePhoneNumber.h"
-#import "LoginViewModel.h"
 #import "RegisterViewController.h"
 #import "FindPsViewController.h"
-
+#import "BaseButton.h"
+#import "LoginViewModel.h"
 
 @interface LoginViewController ()
 
@@ -23,7 +23,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *registBtn;
 
 @property (nonatomic, strong) LoginViewModel *viewModel;
-
 
 @end
 
@@ -103,14 +102,14 @@
         [self.view endEditing:YES];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
             
-            NSInteger nowTime = [[NSDate date] timeIntervalSince1970];
-            UserModel *user = [[UserModel alloc] init];
-            user.uid = [[NSString stringWithFormat:@"%@%ld", self.phoneTextField.text, nowTime] md5String];
-            user.token = [[NSString stringWithFormat:@"%@%ld", self.phoneTextField.text, nowTime] md5String];
-            user.username = @"";
-            user.mobile = self.phoneTextField.text;
-            user.email = @"";
-            [[ShareValue instance] setUser:user];
+//            NSInteger nowTime = [[NSDate date] timeIntervalSince1970];
+//            UserModel *user = [[UserModel alloc] init];
+//            user.uid = [[NSString stringWithFormat:@"%@%ld", self.phoneTextField.text, nowTime] md5String];
+//            user.token = [[NSString stringWithFormat:@"%@%ld", self.phoneTextField.text, nowTime] md5String];
+//            user.username = @"";
+//            user.mobile = self.phoneTextField.text;
+//            user.email = @"";
+//            [[ShareValue instance] setUser:user];
             
             [self dismissViewControllerAnimated:YES completion:^{
                 //发送用户登录成功以后的通知

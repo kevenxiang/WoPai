@@ -68,7 +68,7 @@ static NSString *g_serverUrl = kServerUrl;
     NSLog(@"请求网址:%@\n, 请求参数:%@", path, parameters);
     
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] init];
-    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObjectsFromArray:@[@"text/html", @"text/plain"]];
+    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObjectsFromArray:@[@"application/json", @"text/json", @"text/javascript",@"text/html"]];
     manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
     [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
     manager.requestSerializer.timeoutInterval = 15;
@@ -131,7 +131,7 @@ static NSString *g_serverUrl = kServerUrl;
     }
     
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] init];
-    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObjectsFromArray:@[@"text/html", @"text/plain"]];
+    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObjectsFromArray:@[@"application/json", @"text/json", @"text/javascript",@"text/html"]];
     manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
     [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
     manager.requestSerializer.timeoutInterval = 15;
@@ -141,6 +141,9 @@ static NSString *g_serverUrl = kServerUrl;
     
     [manager GET:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *jsonDic = responseObject;
+        if (jsonDic == nil) {
+            return;
+        }
         NSData *data = [NSJSONSerialization dataWithJSONObject:responseObject options:kNilOptions error:nil];
         NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSLog(@"请求网址:%@\n请求参数:%@", url, parameters);
@@ -181,7 +184,7 @@ static NSString *g_serverUrl = kServerUrl;
     }
     
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] init];
-    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObjectsFromArray:@[@"text/html", @"text/plain"]];
+    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObjectsFromArray:@[@"application/json", @"text/json", @"text/javascript",@"text/html"]];
     manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
     [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
     manager.requestSerializer.timeoutInterval = 15;
@@ -191,6 +194,9 @@ static NSString *g_serverUrl = kServerUrl;
     
     [manager POST:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *jsonDic = responseObject;
+        if (jsonDic == nil) {
+            return;
+        }
         NSData *data = [NSJSONSerialization dataWithJSONObject:responseObject options:kNilOptions error:nil];
         NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSLog(@"请求网址:%@\n请求参数:%@", url, parameters);

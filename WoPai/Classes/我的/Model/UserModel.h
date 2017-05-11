@@ -10,4 +10,10 @@
 
 @interface UserModel : NSObject
 
+@property (nonatomic, assign) NSUInteger userId;
+@property (nonatomic, copy) NSString *phone;
+@property (nonatomic, copy) NSString *password;
+@property (nonatomic, copy) NSString *nickName;
+@property (nonatomic, copy) NSString *quCode;
+
 @end

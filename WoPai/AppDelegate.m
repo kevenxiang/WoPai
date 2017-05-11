@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "FindViewController.h"
 #import "MineViewController.h"
+#import <BmobSDK/Bmob.h>
 
 @interface AppDelegate ()
 
@@ -18,6 +19,23 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    //设置应用的BmobKey
+    [Bmob registerWithAppKey:@"c0255f6d7bce92ee68687a590e5cfb5b"];
+    
+//    BmobObject *gameScore = [BmobObject objectWithClassName:@"GameScore"];
+//    [gameScore setObject:@"小明" forKey:@"playerName"];
+//    [gameScore setObject:@78 forKey:@"score"];
+//    [gameScore setObject:[NSNumber numberWithBool:YES] forKey:@"cheatMode"];
+//    [gameScore saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+//        if (isSuccessful) {
+//            NSLog(@"Bmob保存成功=========");
+//        }
+//    }];
+    
+    
+   
+    
     
     [self setNavigationBarStyle];
     
@@ -66,7 +84,7 @@
     //    [[UINavigationBar appearance] setTranslucent:NO];
     [[UINavigationBar appearance] setTintColor:[UIColor magentaColor]];
 //    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:kRGBCOLOR(235, 72, 139),NSForegroundColorAttributeName, [UIFont boldSystemFontOfSize:18], NSFontAttributeName, nil]];
-    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, [UIFont boldSystemFontOfSize:18], NSFontAttributeName, nil]];
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, [UIFont systemFontOfSize:17], NSFontAttributeName, nil]];
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
 }

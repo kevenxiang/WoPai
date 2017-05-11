@@ -27,8 +27,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Scz-Ex-RAj">
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Scz-Ex-RAj">
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -44,19 +44,23 @@
                     <constraint firstItem="qLj-0V-faN" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="7py-Sy-oUq"/>
                     <constraint firstItem="qLj-0V-faN" firstAttribute="leading" secondItem="O7K-Vw-ohC" secondAttribute="trailing" constant="8" id="AR4-0c-DgL"/>
                     <constraint firstItem="Scz-Ex-RAj" firstAttribute="leading" secondItem="RZ9-Us-Oxl" secondAttribute="leading" id="BWk-yj-4X5"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Scz-Ex-RAj" secondAttribute="trailing" constant="72" id="IsV-08-pAP"/>
                     <constraint firstAttribute="leadingMargin" secondItem="Ao3-Yh-6LH" secondAttribute="leading" id="VRS-ag-46C"/>
                     <constraint firstItem="Ao3-Yh-6LH" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="hTv-MP-Buy"/>
-                    <constraint firstItem="RZ9-Us-Oxl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="12" id="mIY-ib-NeS"/>
+                    <constraint firstItem="RZ9-Us-Oxl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="14" id="mIY-ib-NeS"/>
                     <constraint firstItem="RZ9-Us-Oxl" firstAttribute="leading" secondItem="Ao3-Yh-6LH" secondAttribute="trailing" constant="8" id="pgQ-YX-bjF"/>
                     <constraint firstAttribute="trailingMargin" secondItem="qLj-0V-faN" secondAttribute="trailing" id="qRc-gw-qN5"/>
                     <constraint firstItem="O7K-Vw-ohC" firstAttribute="centerY" secondItem="qLj-0V-faN" secondAttribute="centerY" id="uVz-Qb-RiM"/>
-                    <constraint firstItem="Scz-Ex-RAj" firstAttribute="top" secondItem="RZ9-Us-Oxl" secondAttribute="bottom" constant="12" id="vzM-Or-8rK"/>
+                    <constraint firstItem="Scz-Ex-RAj" firstAttribute="top" secondItem="RZ9-Us-Oxl" secondAttribute="bottom" constant="5" id="vzM-Or-8rK"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="NameLabel" destination="RZ9-Us-Oxl" id="wgt-ta-We9"/>
                 <outlet property="headImgV" destination="Ao3-Yh-6LH" id="ga9-l8-c3p"/>
+                <outlet property="myQRCodeImg" destination="O7K-Vw-ohC" id="PtW-3u-kWI"/>
+                <outlet property="subTitleLabel" destination="Scz-Ex-RAj" id="JCb-9n-eVj"/>
             </connections>
-            <point key="canvasLocation" x="-463" y="110"/>
+            <point key="canvasLocation" x="-694" y="72"/>
         </tableViewCell>
     </objects>
     <resources>

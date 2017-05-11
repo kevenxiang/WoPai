@@ -10,4 +10,6 @@
 
 @interface HeadImgTitleCell : UITableViewCell
 
+- (void)setUserData:(id)data;
+
 @end

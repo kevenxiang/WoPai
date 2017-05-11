@@ -11,6 +11,9 @@
 @interface HeadImgTitleCell ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *headImgV;
+@property (weak, nonatomic) IBOutlet UILabel *NameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subTitleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *myQRCodeImg;
 
 
 @end
@@ -28,6 +31,11 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)setUserData:(id)data {
+    self.NameLabel.text = @"keven";
+    self.subTitleLabel.text = @"个人中心:账户管理，个人设置...";
 }
 
 @end

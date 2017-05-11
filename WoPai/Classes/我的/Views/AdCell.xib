@@ -1,19 +1,50 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="AdCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="135" id="KGk-i7-Jjw" customClass="AdCell">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="120"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="320" height="43"/>
+                <frame key="frameInset" width="360" height="119"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="activity.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="RjE-CQ-bfQ"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timg.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="13f-3j-wop">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="82" id="GEh-V5-yh2"/>
+                            <constraint firstAttribute="height" constant="82" id="gte-eb-v7r"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="随机上榜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkL-sC-Uqp">
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="topMargin" secondItem="rkL-sC-Uqp" secondAttribute="top" id="1Rg-2c-l6U"/>
+                    <constraint firstItem="13f-3j-wop" firstAttribute="centerY" secondItem="RjE-CQ-bfQ" secondAttribute="centerY" id="7PO-Gg-EYU"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="rkL-sC-Uqp" secondAttribute="trailing" id="bSy-TD-CwI"/>
+                    <constraint firstAttribute="bottom" secondItem="RjE-CQ-bfQ" secondAttribute="bottom" id="l4E-RJ-JaQ"/>
+                    <constraint firstItem="RjE-CQ-bfQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="oDz-1r-Z8m"/>
+                    <constraint firstItem="RjE-CQ-bfQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="re0-IB-ooK"/>
+                    <constraint firstItem="13f-3j-wop" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="12" id="t8F-H8-Yy3"/>
+                    <constraint firstAttribute="trailing" secondItem="RjE-CQ-bfQ" secondAttribute="trailing" id="vhd-PB-oxI"/>
+                </constraints>
             </tableViewCellContentView>
+            <point key="canvasLocation" x="-60" y="120"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="activity.jpeg" width="1024" height="266"/>
+        <image name="timg.jpeg" width="838" height="1024"/>
+    </resources>
 </document>

@@ -8,10 +8,10 @@
 
 #import "TopImgBottomLabel.h"
 
-#define kImgWidth   32
-#define kImgHeight  32
+#define kImgWidth           24
+#define kImgHeight          24
 #define kTitleLabelHeight   20
-#define kSpaceHeight   8
+#define kSpaceHeight        3
 
 @interface TopImgBottomLabel ()
 
@@ -59,10 +59,18 @@
         _titleLabel = [[UILabel alloc] init];
         _titleLabel.numberOfLines = 1;
         _titleLabel.textAlignment = NSTextAlignmentCenter;
-        _titleLabel.font = [UIFont systemFontOfSize:14];
-        _titleLabel.textColor = [UIColor darkGrayColor];
+        _titleLabel.font = [UIFont systemFontOfSize:12];
+        _titleLabel.textColor = [UIColor blackColor];
         [self addSubview:_titleLabel];
     }
+}
+
+- (void)setImg:(UIImage *)img {
+    self.imgV.image = img;
+}
+
+- (void)setTitle:(NSString *)title {
+    self.titleLabel.text = title;
 }
 
 @end

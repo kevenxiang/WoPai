@@ -10,5 +10,6 @@
 #define FileHeaders_h
 
 #import "DefineConfig.h"
+#import "UITextField+Value.h"
 
 #endif /* FileHeaders_h */
