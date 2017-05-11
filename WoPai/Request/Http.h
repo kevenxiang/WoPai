@@ -26,6 +26,9 @@
 - (void)productListWithName:(NSString *)name page:(NSUInteger)page item:(NSUInteger)item completion:(void(^)(ErrorModel *error, NSArray *list))completion;
 
 #pragma mark - 添加产品
-- (void)productAddWithProduct:(Product *)product completion:(void(^)(ErrorModel *error))completion;
+- (void)productAddWithProduct:(Product *)product completion:(void(^)(ErrorModel *error,NSString *message))completion;
+
+#pragma mark - 添加产品图片名称
+- (void)productAddPicWithProduct:(Product *)product completion:(void(^)(ErrorModel *error,NSString *message))completion;
 
 @end

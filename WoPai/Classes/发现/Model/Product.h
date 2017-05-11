@@ -16,6 +16,7 @@
 @property (nonatomic, assign) double price;
 @property (nonatomic, copy) NSString *detail;
 @property (nonatomic, copy) NSString *remark;
+//上传到七牛以后返回的图片名称，每个名称有字符串分隔
 @property (nonatomic, copy) NSString *pic;
 @property (nonatomic, copy) NSString *sales;
 @property (nonatomic, copy) NSString *weight;

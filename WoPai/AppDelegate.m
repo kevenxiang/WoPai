@@ -10,6 +10,7 @@
 #import "FindViewController.h"
 #import "MineViewController.h"
 #import <BmobSDK/Bmob.h>
+#import "IQKeyboardManager.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +22,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     //设置应用的BmobKey
-    [Bmob registerWithAppKey:@"c0255f6d7bce92ee68687a590e5cfb5b"];
+//    [Bmob registerWithAppKey:@"c0255f6d7bce92ee68687a590e5cfb5b"];
     
 //    BmobObject *gameScore = [BmobObject objectWithClassName:@"GameScore"];
 //    [gameScore setObject:@"小明" forKey:@"playerName"];
@@ -38,6 +39,7 @@
     
     
     [self setNavigationBarStyle];
+    [self initKeyboard];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
@@ -126,6 +128,14 @@
     self.window.rootViewController = _tabBarController;
 }
 
+- (void)initKeyboard {
+    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+    manager.enable = YES;
+    manager.shouldResignOnTouchOutside = NO;
+    manager.shouldToolbarUsesTextFieldTintColor = YES;
+    manager.enableAutoToolbar = NO;
+    manager.shouldShowTextFieldPlaceholder = NO;
+}
 
 @end
 

@@ -72,13 +72,24 @@
 }
 
 #pragma mark - 添加产品
-- (void)productAddWithProduct:(Product *)product completion:(void(^)(ErrorModel *error))completion {
+- (void)productAddWithProduct:(Product *)product completion:(void(^)(ErrorModel *error, NSString *message))completion {
     NSDictionary *dic = [product keyValues];
     
     [LHttpRequest postHttpRequest:@"WoPai/productAdd" parameters:dic success:^(NSDictionary *responseDic) {
         NSLog(@"添加产品=======:%@", responseDic);
     } failure:^(NSError *error) {
         
+    }];
+}
+
+#pragma mark - 添加产品图片名称
+- (void)productAddPicWithProduct:(Product *)product completion:(void(^)(ErrorModel *error,NSString *message))completion {
+    NSDictionary *dic = [product keyValues];
+    
+    [LHttpRequest postHttpRequest:@"WoPai/productAddPic" parameters:dic success:^(NSDictionary *responseDic) {
+        NSLog(@"添加产品图片=======:%@", responseDic);
+    } failure:^(NSError *error) {
+        NSLog(@"添加图片错误:%@", error);
     }];
 }
 

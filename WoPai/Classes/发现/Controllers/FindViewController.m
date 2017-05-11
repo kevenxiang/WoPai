@@ -11,7 +11,7 @@
 #import "ASFSharedViewTransition.h"
 #import "ProductDetailViewController.h"
 #import "Http.h"
-#import <BmobSDK/Bmob.h>
+#import "PublishProductCtr.h"
 
 #define kItemHeight  330
 
@@ -46,9 +46,7 @@ static NSString * const reuseIdentifier = @"SingleCollectionViewCell";
 //        
 //    }];
     
-    UIImage *img = [UIImage imageNamed:@"timg.jpeg"];
-    NSData *imgData = UIImageJPEGRepresentation(img, 1);
-    NSString *imgStr = [[NSString alloc] initWithData:imgData encoding:NSUnicodeStringEncoding];
+   
 
     
     NSDate *date = [NSDate date];
@@ -62,79 +60,22 @@ static NSString * const reuseIdentifier = @"SingleCollectionViewCell";
     tProduct.price = 4500.00f;
     tProduct.detail = @"真的很厉害的笔记本";
     tProduct.remark = @"很好";
-    tProduct.pic = imgStr;
+    tProduct.pic = @"图片_1,图片_2,图片_3";
     tProduct.sales = @"现在购买，立减200元";
     tProduct.weight = @"5kg";
     tProduct.variety = @"13寸，15寸";
-    tProduct.publishTime = dateStr;
+//    tProduct.publishTime = dateStr;
+    tProduct.publishTime = @"0";
     tProduct.browseTimes = 0;
     tProduct.userId = 1;
-//    [[Http instance] productAddWithProduct:tProduct completion:^(ErrorModel *error) {
+    
+//    [[Http instance] productAddWithProduct:tProduct completion:^(ErrorModel *error, NSString *message) {
 //        
 //    }];
     
-    
-    
-    NSString *fileString = [[NSBundle mainBundle] pathForResource:@"timg" ofType:@"jpeg"];
-    NSString *fileString1 = [[NSBundle mainBundle] pathForResource:@"activity" ofType:@"jpeg"];
-    /*
-    [BmobFile filesUploadBatchWithPaths:@[fileString, fileString1] progressBlock:^(int index, float progress) {
-        
-        //index 上传数组的下标，progress当前文件的进度
-        NSLog(@"index %d progress %f",index,progress);
-        
-    } resultBlock:^(NSArray *array, BOOL isSuccessful, NSError *error) {
-        
-        
-        NSLog(@"上传文件失败:%@",error.localizedDescription);
-        //array 文件数组，isSuccessful 成功或者失败,error 错误信息
-        BmobObject *obj = [[BmobObject alloc] initWithClassName:@"gameScoreFile"];
-        for (int i = 0 ; i < array.count ;i ++) {
-            BmobFile *file = array [i];
-            NSString *key = [NSString stringWithFormat:@"userFile%d",i];
-            [obj setObject:file forKey:key];
-        }
-        
-        [obj saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
-            
-        }];
-        
-    }];
-     */
-    
-    
-    
-    NSBundle *mainBundle = [NSBundle mainBundle];
-    NSString *path = [mainBundle bundlePath];
-    path = [path stringByAppendingPathComponent:@"timg.jpeg"];
-    
-    NSLog(@"文件路径:%i",[[NSFileManager defaultManager] fileExistsAtPath:path]);
-    
-//    BmobObject *obj = [[BmobObject alloc] initWithClassName:@"GameScore"];
-//    BmobFile *file1 = [[BmobFile alloc] initWithFilePath:fileString];
-    
-//    NSData *imgData = [NSData dataWithContentsOfFile:fileString];
-    BmobFile *file = [[BmobFile alloc] initWithFileName:@"image.jpg" withFileData:imgData];
-    [file saveInBackground:^(BOOL isSuccessful, NSError *error) {
-        NSLog(@"上传文件:%@", error);
-    }];
-    
-    
-    
-    
-    
-    
-//    NSURL *url = [NSURL URLWithString:@"http://223.210.34.6:8080/StudentInfoManage/gradeList?page=1&rows=10"];
-//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-//    NSURLSession *session = [NSURLSession sharedSession];
-//    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-//        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+//    [[Http instance] productAddPicWithProduct:tProduct completion:^(ErrorModel *error, NSString *message) {
 //        
-//        NSLog(@"dict=========%@",dict);
 //    }];
-//    
-//    [dataTask resume];
-    
     
 }
 
@@ -142,8 +83,11 @@ static NSString * const reuseIdentifier = @"SingleCollectionViewCell";
     [super viewDidLoad];
     self.navigationItem.title = @"我拍";
     
+    kWEAKSELF;
     [self setRightBarButtonWithTitle:@"发布" titleColor:kRGBCOLOR(235, 72, 139) withBlock:^(NSInteger tag) {
-        
+        PublishProductCtr *publicCtr = [[PublishProductCtr alloc] init];
+        publicCtr.hidesBottomBarWhenPushed = YES;
+        [weakSelf.navigationController pushViewController:publicCtr animated:YES];
     }];
     
     // Add Transition

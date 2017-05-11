@@ -10,8 +10,8 @@
 #define LHttpConfig_h
 
 #define kErrorNoNetwork       @"网络无法连接"
-#define kServerUrl            @"http://192.168.8.103:8080/"
-//#define kServerUrl            @"http://223.210.33.175:8080/"
+//#define kServerUrl            @"http://192.168.8.102:8080/"
+#define kServerUrl            @"http://223.210.35.197:8080/"
 
 #define kSuccessCode       0
 #define kSuccessKey        @"Code"
